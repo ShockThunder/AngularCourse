@@ -11,12 +11,23 @@
     [disabled]="!allowNewServer"
     (click)="onCreateServer()"
     >Add Server</button>
-<p>{{ serverCreationStatus }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serverCreated; else noServer">Server was created with name {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server was created with name {{ serverName }}</p>
+</ng-template>
+
+<app-server *ngFor="let server of serversList"></app-server>
 
 <input type="text"
     class="form-control"
     [(ngModel)]="username"/>
 <button class="btn btn-primary" [disabled]="(username === '')" (click)="resetUsername()">Reset username</button>
 <p> {{ username }}</p>
+
+<button type="button" (click)="toggleDetails()">Display details</button>
+<p *ngIf="showDetails">Secret information</p>
+<p *ngFor="let click of buttonClicks"
+[ngClass]="{future: buttonClicks.length > 5}">
+    {{ click }}
+</p>
