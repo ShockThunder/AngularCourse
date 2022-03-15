@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-servers',
@@ -18,6 +18,8 @@ export class ServersComponent implements OnInit {
   buttonClicks: string[] = [];
   showDetails = false; 
   username = "";
+
+  @Input() test: string = "no";
   constructor() {}
 
   ngOnInit(): void {
