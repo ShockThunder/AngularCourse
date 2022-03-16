@@ -1,5 +1,9 @@
-<app-header></app-header>
+<app-header (isRecipe)="isRecipe = $event"></app-header>
 <div class="container">
-    <app-recipe-book></app-recipe-book>
-    <app-shopping-list></app-shopping-list>
+    <div class="row">
+        <div class="col-md-12">
+            <app-recipe-book *ngIf="isRecipe"></app-recipe-book>
+            <app-shopping-list *ngIf="!isRecipe"></app-shopping-list>          
+        </div>
+    </div>
 </div>
