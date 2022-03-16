@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'first-courseapp';
+  nums: number[] = [];
+
+  addNum(num: number): void{
+    this.nums.push(num);
+  }
+
 }

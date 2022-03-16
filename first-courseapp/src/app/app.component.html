@@ -7,3 +7,17 @@
     </div>
   </div>
 </div>
+
+<div>
+  <app-game-control (counterEvent)="addNum($event)"></app-game-control>
+  <div *ngFor="let num of nums">
+    <ng-container *ngIf="num % 2 === 0; then odd; else even">
+    </ng-container>
+    <ng-template #odd>
+      <app-odd [num]="num"></app-odd>
+    </ng-template>    
+    <ng-template #even>
+      <app-even [num]="num"></app-even>
+    </ng-template>
+  </div>
+</div>
