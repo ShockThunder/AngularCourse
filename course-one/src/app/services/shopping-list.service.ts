@@ -23,4 +23,9 @@ export class ShoppingListService {
     this.ingridients.push(ingridient);
     this.addIngr.emit();
   }
+
+  addIngridients(ingridients: Ingridient[]){
+    this.ingridients.push(...ingridients);
+    this.addIngr.emit();
+  }
 }
