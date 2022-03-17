@@ -9,6 +9,8 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { GameControlComponent } from './game/game-control/game-control.component';
 import { OddComponent } from './game/odd/odd.component';
 import { EvenComponent } from './game/even/even.component';
+import { BasicHighlightDirective } from './basic-highlight.directive';
+import { SecondHighlightDirective } from './second-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { EvenComponent } from './game/even/even.component';
     SuccessAlertComponent,
     GameControlComponent,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    BasicHighlightDirective,
+    SecondHighlightDirective
   ],
   imports: [
     BrowserModule,

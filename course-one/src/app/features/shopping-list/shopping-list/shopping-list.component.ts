@@ -9,7 +9,6 @@ import { ShoppingListEditComponent } from '../shopping-list-edit/shopping-list-e
 })
 export class ShoppingListComponent implements OnInit {
 
-  @ViewChild('editComp') editComp!: ShoppingListEditComponent;
   ingridients: Ingridient[] = [
     new Ingridient("test ingridient", 8),
     new Ingridient("TOAM", 12)
