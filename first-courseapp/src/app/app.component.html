@@ -19,7 +19,15 @@
     <ng-template #even>
       <app-even [num]="num"></app-even>
     </ng-template>
+
+    <div *appUnless="num % 2 === 0;">
+      <app-odd [num]="num"></app-odd>
+    </div>
   </div>
+
+
 </div>
 
-<p appSecondHighlight>WOWOWOWOW</p>
+
+
+<p [appSecondHighlight]="'red'" defaultColor="yellow">WOWOWOWOW</p>

@@ -11,6 +11,7 @@ import { OddComponent } from './game/odd/odd.component';
 import { EvenComponent } from './game/even/even.component';
 import { BasicHighlightDirective } from './basic-highlight.directive';
 import { SecondHighlightDirective } from './second-highlight.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SecondHighlightDirective } from './second-highlight.directive';
     OddComponent,
     EvenComponent,
     BasicHighlightDirective,
-    SecondHighlightDirective
+    SecondHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
