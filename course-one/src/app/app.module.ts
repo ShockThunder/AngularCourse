@@ -11,6 +11,7 @@ import { RecipeDetailsComponent } from './features/recipe-book/recipe-details/re
 import { RecipeBookComponent } from './features/recipe-book/recipe-book.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
