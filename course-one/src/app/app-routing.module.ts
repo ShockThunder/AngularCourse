@@ -5,14 +5,19 @@ import { RecipeBookComponent } from './features/recipe-book/recipe-book.componen
 import { ShoppingListComponent } from './features/shopping-list/shopping-list/shopping-list.component';
 import { RecipeStartComponent } from './features/recipe-book/recipe-start/recipe-start.component';
 import { RecipeDetailsComponent } from './features/recipe-book/recipe-details/recipe-details.component';
+import { RecipeEditComponent } from './features/recipe-book/recipe-edit/recipe-edit.component';
 
 const appRoutes: Routes = [
-  { path: 'recipes', component: RecipeBookComponent, children: [
-    {path: '', component: RecipeStartComponent},
-    {path: ':id', component: RecipeDetailsComponent}
-  ]},
-  { path: 'shopping-list', component: ShoppingListComponent},
-  { path: '', redirectTo: '/recipes', pathMatch: 'full'}
+  {
+    path: 'recipes', component: RecipeBookComponent, children: [
+      { path: '', component: RecipeStartComponent },
+      { path: 'new', component: RecipeEditComponent },
+      { path: ':id', component: RecipeDetailsComponent },
+      { path: ':id/edit', component: RecipeEditComponent },
+    ]
+  },
+  { path: 'shopping-list', component: ShoppingListComponent },
+  { path: '', redirectTo: '/recipes', pathMatch: 'full' }
 ]
 
 @NgModule({
