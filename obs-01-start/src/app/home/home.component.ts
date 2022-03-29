@@ -24,13 +24,24 @@ export class HomeComponent implements OnInit, OnDestroy {
       let count = 0;
       setInterval(() => {
         observer.next(count);
+        if(count == 2){
+          observer.complete();
+        }
+        if(count > 3){
+          observer.error(new Error('AAAAAAAAAAAA'));
+        }
         count++;
       }, 1000)
     });
 
-    this.firstSub = customInterval.subscribe(data => {
+    this.firstSub = customInterval.subscribe({
+      next: (data) => {
       console.log(data);
-    })
+    }, error: (error) => {
+      console.log(error);
+    }, complete: () => {
+      console.log('COmpleted');
+    }})
   }
 
 
