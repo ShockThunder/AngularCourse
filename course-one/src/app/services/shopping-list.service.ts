@@ -1,4 +1,5 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingridient } from '../models/ingridient';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class ShoppingListService {
     new Ingridient("TOAM", 12)
   ];
 
-  addIngr = new EventEmitter<void>();
+  addIngr = new Subject<void>();
 
   constructor() { }
 
@@ -21,11 +22,11 @@ export class ShoppingListService {
 
   addIngridient(ingridient: Ingridient){
     this.ingridients.push(ingridient);
-    this.addIngr.emit();
+    this.addIngr.next();
   }
 
   addIngridients(ingridients: Ingridient[]){
     this.ingridients.push(...ingridients);
-    this.addIngr.emit();
+    this.addIngr.next();
   }
 }
